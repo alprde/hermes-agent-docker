@@ -2,7 +2,8 @@
 # tüm bağımlılıkları sıfırdan kurmak yerine resmi, hazır imajı kullanıyoruz.
 FROM nousresearch/hermes-agent:latest
 
-# Eğer ekstra paket kurmanız gerekirse aşağıdaki gibi ekleyebilirsiniz:
-# RUN apt-get update && apt-get install -y htop && rm -rf /var/lib/apt/lists/*
+# 'hermes' komutunun doğrudan çalışabilmesi için sanal ortam (venv) yolunu PATH'e ekliyoruz
+ENV PATH="/opt/hermes/.venv/bin:$PATH"
 
-# Resmi imajda zaten entrypoint ve tüm ayarlar hazır gelmektedir.
+# Çalışma dizinini /opt/hermes olarak ayarlayalım (isteğe bağlı ama faydalı)
+WORKDIR /opt/hermes
