@@ -56,6 +56,11 @@ services:
       # - GOOGLE_CHAT_SERVICE_ACCOUNT_JSON=${GOOGLE_CHAT_SERVICE_ACCOUNT_JSON}
       # - GOOGLE_CHAT_ALLOWED_USERS=${GOOGLE_CHAT_ALLOWED_USERS}
     command: ["gateway", "run"]
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: "2.0"
 
   dashboard:
     image: hermes-agent
@@ -74,5 +79,10 @@ services:
       - HERMES_GID=${HERMES_GID:-10000}
     # Changed host to 0.0.0.0 for PaaS/Proxy access
     command: ["dashboard", "--host", "0.0.0.0", "--no-open", "--insecure"]
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1.0"
 
 
