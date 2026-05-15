@@ -37,7 +37,6 @@ services:
       - HERMES_UID=${HERMES_UID:-10000}
       - HERMES_GID=${HERMES_GID:-10000}
       - HERMES_ALLOW_ROOT_GATEWAY=1
-      - HERMES_HOME=/opt/data
       # To expose the OpenAI-compatible API server beyond localhost:
       - API_SERVER_HOST=${API_SERVER_HOST:-0.0.0.0}
       - API_SERVER_KEY=${API_SERVER_KEY}
@@ -80,7 +79,6 @@ services:
       - HERMES_UID=${HERMES_UID:-10000}
       - HERMES_GID=${HERMES_GID:-10000}
       - HERMES_ALLOW_ROOT_GATEWAY=1
-      - HERMES_HOME=/opt/data
     # Changed host to 0.0.0.0 for PaaS/Proxy access
     command: ["dashboard", "--host", "0.0.0.0", "--no-open", "--insecure"]
     deploy:
