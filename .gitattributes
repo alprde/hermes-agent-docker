@@ -1,2 +1,6 @@
 # Auto-generated files — collapse diffs and exclude from language stats
 web/package-lock.json linguist-generated=true
+
+# Enforce LF line endings for shell scripts and docker files so they work on Linux containers
+*.sh text eol=lf
+docker/entrypoint.sh text eol=lf
