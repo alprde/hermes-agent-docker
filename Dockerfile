@@ -6,4 +6,3 @@ FROM nousresearch/hermes-agent:latest
 ENV PATH="/opt/hermes/.venv/bin:$PATH"
 
 # Çalışma dizinini /opt/hermes olarak ayarlayalım (isteğe bağlı ama faydalı)
-WORKDIR /opt/hermes
